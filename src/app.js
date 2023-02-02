@@ -29,7 +29,7 @@ const mainRouter = require('./routes/main'); // Rutas main
 const productsRouter = require('./routes/products'); // Rutas /products
 
 app.use('/', mainRouter);
-//app.use('/products', productsRouter);
+app.use('/products', productsRouter);
 
 
 
