@@ -9,15 +9,6 @@
         "image": "img-cafetera-moulinex.jpg"
     },
     {
-        "id": 2,
-        "name": "Macbook Pro 2022",
-        "price": 500,
-        "discount": 3,
-        "category": "in-sale",
-        "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
-        "image": "img-macbook-pro-2019.jpg"
-    },
-    {
         "id": 3,
         "name": "Samsung Galaxy S10",
         "price": 72999,

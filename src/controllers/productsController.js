@@ -46,23 +46,49 @@ const controller = {
 			"image": "default-image.png",
 		};
 		products.push(newProduct);
-		writeJson(products);
+		
 
 		res.redirect("/products/")
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+		let productID = Number(req.params.id);
+		let productToEdit = products.find(product => product.id === productID);
+		res.render("product-edit-form", {
+			productToEdit
+		})
+
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+		let productID = Number(req.params.id);
+		products.forEach(product => {
+			if(product.id == productID){
+				product.name = req.body.name,
+				product.price = req.body.price,
+				product.discount = req.body.discount,
+				product.category = req.body.category,
+				product.description = req.body.description
+			}
+		});
+		writeJson(products);
+		/* res.send("Producto Editado Correctamente"); */
+		res.redirect("/products/")
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+		let productID = Number(req.params.id);
+		products.forEach(product => {
+			if(product.id == productID){
+				let productDestroy = products.indexOf(product);
+				products.splice(productDestroy, 1)
+			};
+		});
+
+		writeJson(products);
+		res.redirect("/products/")
 	}
 };
 
